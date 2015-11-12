@@ -1718,6 +1718,8 @@ module.exports = (function() {
     DataSourceAggregator.prototype.isNullObject = false;
 
     DataSourceAggregator.prototype.setAggregates = function(aggregations) {
+			  console.log(this.headers);
+				console.log(this);
         this.lastAggregate = aggregations;
         var props = [];
         var i;
@@ -29331,6 +29333,7 @@ it contains all code/data that's necessary for easily implementing a virtual dat
 
         setAggregates: function(mapOfKeysToFunctions) {
             var self = this;
+						console.log(this.getHeaders());
             this.getDataModel().setAggregates(mapOfKeysToFunctions);
             this.createColumns();
             setTimeout(function() {
