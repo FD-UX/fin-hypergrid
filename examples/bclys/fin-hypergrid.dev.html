@@ -2568,7 +2568,9 @@ module.exports = (function() {
         },
 
 				doNothing: function(columIndex){
-						return -1;
+						return function(group) {
+								return null;
+						}
 				},
 
         stddev: function(columIndex) {
