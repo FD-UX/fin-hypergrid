@@ -2567,6 +2567,10 @@ module.exports = (function() {
             };
         },
 
+				doNothing: function(columIndex){
+						return null;
+				},
+
         stddev: function(columIndex) {
             return function(group) {
                 var r;
