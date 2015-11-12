@@ -1717,7 +1717,7 @@ module.exports = (function() {
 
     DataSourceAggregator.prototype.isNullObject = false;
 
-    DataSourceAggregator.prototype.setAggregates = function(aggregations, headers) {
+    DataSourceAggregator.prototype.setAggregates = function(aggregations) {
 			  console.log(this.headers);
 				console.log(this);
         this.lastAggregate = aggregations;
@@ -1742,12 +1742,12 @@ module.exports = (function() {
 
         for (i = 0; i < props.length; i++) {
             var agg = props[i];
-            this.addAggregate(headers[i], agg[1]);
+            this.addAggregate(agg[0], agg[1]);
         }
     };
 
-    DataSourceAggregator.prototype.addAggregate = function(header, func) {
-        this.headers.push(header);
+    DataSourceAggregator.prototype.addAggregate = function(label, func) {
+        this.headers.push(headerify(label));
         this.aggregates.push(func);
     };
 
@@ -29331,10 +29331,10 @@ it contains all code/data that's necessary for easily implementing a virtual dat
             this.changed();
         },
 
-        setAggregates: function(mapOfKeysToFunctions, headers) {
+        setAggregates: function(mapOfKeysToFunctions) {
             var self = this;
 						console.log(this.getHeaders());
-            this.getDataModel().setAggregates(mapOfKeysToFunctions, headers);
+            this.getDataModel().setAggregates(mapOfKeysToFunctions);
             this.createColumns();
             setTimeout(function() {
                 self.changed();
