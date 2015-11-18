@@ -2249,9 +2249,12 @@ module.exports = (function() {
 module.exports = (function() {
 
     var headerify = function(string) {
+			  console.log('headerify2252');
+				console.log(string);
         var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
             return s.charAt(0).toUpperCase() + s.slice(1);
         });
+				console.log(pieces.join(' '));
         return pieces.join(' ');
     };
 
