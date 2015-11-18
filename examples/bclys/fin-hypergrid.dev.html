@@ -1686,14 +1686,17 @@ var DataNodeLeaf = require('./DataNodeLeaf');
 module.exports = (function() {
 
     var headerify = function(string) {
-        //var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
-        //    return (s.charAt(0).toUpperCase() + s.slice(1)).trim();
-        //});
-        //pieces = pieces.filter(function(e) {
-        //    return e.length !== 0;
-        //});
-        //return pieces.join(' ').trim();
-				return string;
+			  console.log('headerify 1689');
+				console.log(string);
+        var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
+            return (s.charAt(0).toUpperCase() + s.slice(1)).trim();
+        });
+        pieces = pieces.filter(function(e) {
+            return e.length !== 0;
+        });
+				console.log(pieces.join(' ').trim());
+        return pieces.join(' ').trim();
+				//return string;
     };
 
     //?[t,c,b,a]
@@ -2247,11 +2250,12 @@ module.exports = (function() {
 module.exports = (function() {
 
     var headerify = function(string) {
-        //var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
+				console.log(string);
+        var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
             return s.charAt(0).toUpperCase() + s.slice(1);
-        //});
-        //return pieces.join(' ');
-				return string; 
+        });
+				console.log(pieces.join(' '));
+        return pieces.join(' ');
     };
 
     var computeFieldNames = function(object) {
