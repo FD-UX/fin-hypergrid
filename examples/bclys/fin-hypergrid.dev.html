@@ -1693,7 +1693,7 @@ module.exports = (function() {
         //    return e.length !== 0;
         //});
         //return pieces.join(' ').trim();
-				return string; 
+				return string;
     };
 
     //?[t,c,b,a]
@@ -2247,10 +2247,11 @@ module.exports = (function() {
 module.exports = (function() {
 
     var headerify = function(string) {
-        var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
+        //var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
             return s.charAt(0).toUpperCase() + s.slice(1);
-        });
-        return pieces.join(' ');
+        //});
+        //return pieces.join(' ');
+				return string; 
     };
 
     var computeFieldNames = function(object) {
