@@ -1686,8 +1686,6 @@ var DataNodeLeaf = require('./DataNodeLeaf');
 module.exports = (function() {
 
     var headerify = function(string) {
-				console.log('headerify 1689');
-				console.log(string);
         var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
             return (s.charAt(0).toUpperCase() + s.slice(1)).trim();
         });
@@ -1696,7 +1694,7 @@ module.exports = (function() {
         });
 				console.log(pieces.join(' ').trim());
         //return pieces.join(' ').trim();
-				return string; 
+				return string;
     };
 
     //?[t,c,b,a]
@@ -1722,8 +1720,6 @@ module.exports = (function() {
     DataSourceAggregator.prototype.isNullObject = false;
 
     DataSourceAggregator.prototype.setAggregates = function(aggregations) {
-			  console.log(this.headers);
-				console.log(this);
         this.lastAggregate = aggregations;
         var props = [];
         var i;
@@ -2250,12 +2246,9 @@ module.exports = (function() {
 module.exports = (function() {
 
     var headerify = function(string) {
-			  console.log('headerify2252');
-				console.log(string);
         var pieces = string.replace(/[_-]/g, ' ').replace(/[A-Z]/g, ' $&').split(' ').map(function(s) {
             return s.charAt(0).toUpperCase() + s.slice(1);
         });
-				console.log(pieces.join(' '));
         return pieces.join(' ');
     };
 
