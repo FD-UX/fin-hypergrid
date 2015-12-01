@@ -30688,7 +30688,7 @@ var validIdentifierMatch = /^(?!(?:abstract|boolean|break|byte|case|catch|char|c
 
 
 </style>
-    <input id="editor" type="number">
+    <input id="editor" >
   </template>
   <script>'use strict';
 /**
@@ -30720,6 +30720,219 @@ var validIdentifierMatch = /^(?!(?:abstract|boolean|break|byte|case|catch|char|c
 })(); /* jshint ignore:line */
 </script>
 </polymer-element>
+
+</polymer-element><polymer-element name="fin-hypergrid-cell-editor-numberfield" extends="fin-hypergrid-cell-editor-simple" assetpath="/dev/fin-hypergrid/polymer/html/cell-editors/">
+  <template>
+    <style type="text/css">:host {
+    display: block;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+    <input id="editor" type="number" step="0.01">
+  </template>
+  <script>'use strict';
+/**
+ *
+ * @module cell-editors\textfield
+ *
+ */
+(function() {
+
+    Polymer('fin-hypergrid-cell-editor-numberfield',{ /* jshint ignore:line */
+
+        /**
+         * @property {string} alias - my lookup alias
+         * @instance
+         */
+        alias: 'numberfield',
+
+        /**
+        * @function
+        * @instance
+        * @description
+        select everything
+        */
+        selectAll: function() {
+            this.input.setSelectionRange(0, this.input.value.length);
+        }
+    });
+
+})(); /* jshint ignore:line */
+</script>
+</polymer-element>
+
 <polymer-element name="fin-hypergrid-cell-editor-choice" extends="fin-hypergrid-cell-editor-simple" assetpath="/dev/fin-hypergrid/polymer/html/cell-editors/">
   <template>
     <style type="text/css">:host {
